@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import "./App.css";
 import Modal from "react-modal";
+import "./App.css";
+
 
 export default class App extends Component {
   state = {
@@ -31,20 +32,20 @@ export default class App extends Component {
     return (
       <div>
         <h1 className="nama">{nama}</h1>
-        <button onClick={this.bukamodal}>KETUK UNTUK GANTI NAMA</button>
+        <button className="ganti" onClick={this.bukamodal}>CHANGE YOUR NAME</button>
 
         <Modal isOpen={modalcuy} onRequestClose={this.tutupmodal}>
-          <p className="gantinamamu">GANTI NAMAMU di kolom ini:</p>
+          <p className="gantinamamu">REPLACE in the following column:</p>
           <form>
             <input
               className="input"
               type="text"
               name="nama"
-              placeholder="ketik di sini"
+              placeholder="type here"
               onChange={this.rubah}
             />
           </form>
-          <button onClick={this.tutupmodal}>TUTUP</button>
+          <button onClick={this.tutupmodal}>CLOSE</button>
           <button onClick={this.save}>SAVE</button>
         </Modal>
       </div>
